@@ -1,15 +1,7 @@
-# provider "aws" {
-#       region     = var.region
-#       access_key = var.access_key
-#       secret_key = var.secret_key
-#  } 
-
- ###############################################################################
+###############################################################################
 # Provider
 ###############################################################################
 provider "aws" {
-  #access_key = var.access_key
-  #secret_key = var.secret_key
   region     = var.vpc_region
 }
 
@@ -33,9 +25,17 @@ module "front-subnet" {
     source = "./02_sn-front"
     vpc_id      = module.vpc.id
     list-region = module.public-subnet.used_az
+    nat-gw-id   = module.public-subnet.ngw-id
 }
 module "back-subnet" {
     source = "./03_sn-back"
     vpc_id      = module.vpc.id
     list-region = module.public-subnet.used_az
+    nat-gw-id   = module.public-subnet.ngw-id
 }
+
+# module "networking" {
+#     source = "./04_network"
+#     vpc_id      = module.vpc.id
+#     public-subnet_ids = module.public-subnet.ids
+# }
