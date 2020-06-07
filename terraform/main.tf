@@ -33,11 +33,15 @@ module "back-subnet" {
     list-region = module.public-subnet.used_az
     nat-gw-id   = module.public-subnet.ngw-id
 }
-module "ec2" {
-    source = "./04_ec2"
-    vpc_id      = module.vpc.id
-    vpc_cidr    = module.vpc.cidr
+module "compute" {
+    source = "./04_compute"
+    vpc_id          = module.vpc.id
+    vpc_cidr        = module.vpc.cidr
+    aws_key_name    = var.aws_key_name
+    sn-public-list  = module.public-subnet.public-sn-ids
+    #sg-public-ids   = tolist(["${module.public-subnet.public-sn-ids}"])
 }
+
 # module "networking" {
 #     source = "./04_network"
 #     vpc_id      = module.vpc.id

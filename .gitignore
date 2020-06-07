@@ -5,5 +5,5 @@
 **/.terraform/
 **/*.tfstate
 **/*.tfstate.backup
-
+keys/
 .idea/

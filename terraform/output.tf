@@ -7,13 +7,13 @@ output "vpc-id" {
 }
 
 output "sg-public-id" {
-  value = "${module.ec2.sg-public-ids}"
+  value = "${module.compute.sg-public-id}"
 }
 
 output "sg-front-id" {
-  value = "${module.ec2.sg-front-ids}"
+  value = "${module.compute.sg-front-id}"
 }
 
 output "sg-back-id" {
-  value = "${module.ec2.sg-back-ids}"
+  value = "${module.compute.sg-back-id}"
 }

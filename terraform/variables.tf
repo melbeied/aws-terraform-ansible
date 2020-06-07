@@ -11,3 +11,10 @@ variable "vpc_cidr_block" {
   description = "IP addressing for th VPC"
   default     = "10.0.0.0/22"
 }
+
+variable "aws_key_path" {
+    default = "."
+}
+variable "aws_key_name" {
+    default = "ansible"
+}
