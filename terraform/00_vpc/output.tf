@@ -10,3 +10,6 @@ output "id" {
 output "region" {
   value = "${var.vpc_region}"
 }
+output "cidr" {
+  value = "${aws_vpc.vpc.cidr_block}"
+}

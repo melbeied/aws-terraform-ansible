@@ -33,7 +33,11 @@ module "back-subnet" {
     list-region = module.public-subnet.used_az
     nat-gw-id   = module.public-subnet.ngw-id
 }
-
+module "ec2" {
+    source = "./04_ec2"
+    vpc_id      = module.vpc.id
+    vpc_cidr    = module.vpc.cidr
+}
 # module "networking" {
 #     source = "./04_network"
 #     vpc_id      = module.vpc.id
