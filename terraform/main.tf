@@ -34,7 +34,7 @@ module "back-subnet" {
     nat-gw-id   = module.public-subnet.ngw-id
 }
 module "compute" {
-    source = "./04_compute"
+    source = "./05_compute"
     vpc_id          = module.vpc.id
     vpc_cidr        = module.vpc.cidr
     aws_key_name    = var.aws_key_name
