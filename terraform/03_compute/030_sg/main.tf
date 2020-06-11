@@ -72,7 +72,7 @@ resource "aws_security_group" "SG_front_22_80_443" {
 }
 
 resource "aws_security_group" "SG_back_22_3306" {
-  name        = "SG_front_80_443"
+  name        = "SG_back_80_443"
   description = "Port 22, 3306 from vpc subnet"
   vpc_id      = var.vpc_id
   ingress {

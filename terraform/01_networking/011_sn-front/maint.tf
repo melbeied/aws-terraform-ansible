@@ -19,14 +19,15 @@ resource "aws_route_table" "front_routetable" {
   }
 }
 
+resource "aws_route" "nat_route" {
+  route_table_id         = aws_route_table.front_routetable.id
+  destination_cidr_block = "0.0.0.0/0"
+  nat_gateway_id         = var.nat-gw-id
+  
+}
+
 resource "aws_route_table_association" "front_subnet" {
   count           = length(aws_subnet.front.*.id)
   subnet_id       = element(aws_subnet.front.*.id, count.index)
   route_table_id  = aws_route_table.front_routetable.id
-}
-
-resource "aws_route" "nat_route" {
-  route_table_id         = aws_route_table.front_routetable.id
-  destination_cidr_block = "0.0.0.0/0"
-  gateway_id             = var.nat-gw-id
 }

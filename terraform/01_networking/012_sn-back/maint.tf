@@ -19,14 +19,16 @@ resource "aws_route_table" "back_routetable" {
   }
 }
 
+
+// to activate
+resource "aws_route" "nat_route" {
+  route_table_id         = aws_route_table.back_routetable.id
+  destination_cidr_block = "0.0.0.0/0"
+  nat_gateway_id         = var.nat-gw-id
+}
+
 resource "aws_route_table_association" "back_subnets" {
   count           = length(aws_subnet.back.*.id)
   subnet_id       = element(aws_subnet.back.*.id, count.index)
   route_table_id  = aws_route_table.back_routetable.id
-}
-
-resource "aws_route" "nat_route" {
-  route_table_id         = aws_route_table.back_routetable.id
-  destination_cidr_block = "0.0.0.0/0"
-  gateway_id             = var.nat-gw-id
 }

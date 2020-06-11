@@ -1,7 +1,7 @@
 variable "vpc_id" {}
 
 variable "instance_bastion_type" {
-  default   = "m1.micro"
+  default   = "t2.micro"
 }
 
 variable "aws_key_name" {}

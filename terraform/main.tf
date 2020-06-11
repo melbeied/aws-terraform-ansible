@@ -43,4 +43,5 @@ module "compute" {
     vpc_cidr        = module.vpc.cidr
     aws_key_name    = var.aws_key_name
     sn-public-list  = module.public-subnet.public-sn-ids
+    cidrs-sn-public = ["10.0.0.0/27","10.0.1.0/27"]
 }

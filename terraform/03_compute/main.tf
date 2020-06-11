@@ -10,3 +10,10 @@ module "ec2" {
     sg-public-id    = module.sg.sg-public-id
     sn-public-list  = var.sn-public-list
 }
+
+// module "alb" {
+//     source          = "./032_alb"
+//     vpc_id          = var.vpc_id
+//     sn-public-list  = var.sn-public-list
+//     cidrs-sn-public = var.cidrs-sn-public
+// }

@@ -1,0 +1,18 @@
+Domain Name,Record Name,Record Type,Record Value
+*.melbeied.net,_5c4f39a4d07ca96d2df0846359a772f7.melbeied.net.,CNAME,_fe630317fad8547747963924de5f9cd1.tfmgdnztqk.acm-validations.aws.
+
+
+
+Type	Amazon Issued
+In use?	No
+Domain name	*.melbeied.net
+Number of additional names	0
+Identifier	a5616dc6-3c3f-4a42-b6a9-df2e6b649088
+Serial number	N/A	
+
+
+Requested at	2020-06-09T09:16:53UTC
+Public key info	RSA 2048-bit
+Signature algorithm	SHA256WITHRSA
+ARN	arn:aws:acm:us-east-1:599271616820:certificate/a5616dc6-3c3f-4a42-b6a9-df2e6b649088
+Validation state	Pending
